@@ -1,4 +1,5 @@
 import static org.junit.Assert.assertTrue;
+
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
@@ -22,4 +23,13 @@ public class TestCompute {
     int result=c.countNumberOfOccurrences("str");
     assertEquals(result,-1);
   }
+  @Test
+  public void test2() {
+    MessageQueue mq = mock(MessageQueue.class);
+    c = new Compute(mq);
+    when(mq.contains(anyString())).thenReturn(false);
+    int result=c.countNumberOfOccurrences("str");
+    assertEquals(result,-1);
+  }
+  
 }

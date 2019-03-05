@@ -17,11 +17,12 @@ public class TestUtil {
   @Test
   public void example() { assertTrue(true); }
   
- /* @Test
+  @Test
   public void test1() { 
 	  boolean res=c.compute(1);
 	  assertEquals(res,false);
 	 }
+  /*
   @Test
   public void test2() { 
 	  boolean res=c.compute(1,2,3);

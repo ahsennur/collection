@@ -22,16 +22,17 @@ public class TestCompute {
     MessageQueue mq = mock(MessageQueue.class);
     c = new Compute(mq);
     when(mq.size()).thenReturn(0);
-    int result=c.countNumberOfOccurrences("str");
+    int result=c.countNumberOfOccurrences("s");
     assertEquals(result,-1);
   }
   @Test
   public void test2() {
     MessageQueue mq = mock(MessageQueue.class);
     c = new Compute(mq);
+    when(mq.size()).thenReturn(7);
     when(mq.contains(anyString())).thenReturn(false);
     int result=c.countNumberOfOccurrences("s");
-    assertEquals(result,-1);
+    assertEquals(result,0);
   }
   
   
@@ -45,5 +46,16 @@ public class TestCompute {
     assertNotEquals(result,-1);
   }
   
+  @Test
+  public void test4() {
+    MessageQueue mq = mock(MessageQueue.class);
+    c = new Compute(mq);
+    when(mq.size()).thenReturn(7);
+    when(mq.contains(anyString())).thenReturn(true);
+    when(mq.getAt(anyInt())).thenReturn("s");
+    int result=c.countNumberOfOccurrences("s");
+    assertNotEquals(result,-1);
+    assertNotEquals(result,0);
+  }
   
 }

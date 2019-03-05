@@ -22,12 +22,12 @@ public class TestUtil {
 	  boolean res=c.compute(1);
 	  assertEquals(res,false);
 	 }
-  /*
+  
   @Test
   public void test2() { 
 	  boolean res=c.compute(1,2,3);
 	  assertEquals(res,true);
 	 }
-	 */
+	 
   
 }

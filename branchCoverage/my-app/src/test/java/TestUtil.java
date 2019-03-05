@@ -34,4 +34,8 @@ public class TestUtil {
 	  boolean res=c.compute(1,2);
 	  assertEquals(res,false);
 	 }
+  @Test(expected = RuntimeException.class)
+  public void test4() { 
+	  boolean res=c.compute(0,1,2);
+	 }
 }

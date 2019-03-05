@@ -38,4 +38,9 @@ public class TestUtil {
   public void test4() { 
 	  boolean res=c.compute(0,1,2);
 	 }
+  @Test
+  public void test5() { 
+	  boolean res=c.compute(4,3,10);
+	  assertEquals(res,false);
+	 }
 }

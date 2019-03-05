@@ -2,6 +2,8 @@ import static org.junit.Assert.assertTrue;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+//import static org.junit.*;
 import static org.mockito.Mockito.*;
 
 import org.junit.Test;
@@ -28,8 +30,20 @@ public class TestCompute {
     MessageQueue mq = mock(MessageQueue.class);
     c = new Compute(mq);
     when(mq.contains(anyString())).thenReturn(false);
-    int result=c.countNumberOfOccurrences("str");
+    int result=c.countNumberOfOccurrences("s");
     assertEquals(result,-1);
   }
+  
+  
+  @Test
+  public void test3() {
+    MessageQueue mq = mock(MessageQueue.class);
+    c = new Compute(mq);
+    when(mq.size()).thenReturn(7);
+    when(mq.contains(anyString())).thenReturn(true);
+    int result=c.countNumberOfOccurrences("s");
+    assertNotEquals(result,-1);
+  }
+  
   
 }

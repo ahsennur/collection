@@ -29,5 +29,9 @@ public class TestUtil {
 	  assertEquals(res,true);
 	 }
 	 
-  
+  @Test
+  public void test3() { 
+	  boolean res=c.compute(1,2);
+	  assertEquals(res,false);
+	 }
 }
